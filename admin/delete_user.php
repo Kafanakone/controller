@@ -9,10 +9,10 @@
     // verification s'il a le bon mot de passe pour supprimer
     if(isset($_POST['adminpassword']) && !empty($_POST['adminpassword'] )){
         $adminpassword = md5(htmlspecialchars($_POST['adminpassword']));
-        $delPersonne = md5(htmlspecialchars($_POST['idPersonne']));
+        $delPersonne = md5(htmlspecialchars($_POST['adminpassword']));
         if ($adminpassword == $_SESSION['password']) {
                 $del = $bdd->prepare('DELETE FROM users WHERE id = ?');
-                $del->execute(array($delPersonne));
+                $del->execute(array($_SESSION['iddelete']));
                 header('Location: dashboard_liste_users.php'); 
             die();
         }else{

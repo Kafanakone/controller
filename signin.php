@@ -10,13 +10,28 @@
     <title>Inscription</title>
 </head>
 <body>
+<style>
+        body{
+            background-image: url("img/bg_signin.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+        }
+        .bg{
+            background-color: rgba(0, 54, 104, 0.9);
+        }
+        .fw{
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+    </style>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <img src="img/icon-contact.png" alt="icon contact" class="icon-contact" style="max-width: 50px;">
+            <div class="col-lg-6 mx-auto my-4 bg p-5">
+                <!-- <img src="img/icon-contact.png" alt="icon contact" class="icon-contact" style="max-width: 50px;"> -->
                 <div class="left-conteneur-text">
-                    <h5>Inscrivez-Vous</h5>
-                    <p>Créez un compte gratuit sur Futur Digital </p>
+                    <!-- <h5 class="fw text-center">Inscrivez-Vous</h5> -->
+                    <p class="fw text-center">Créez un compte, c'est gratuit </p>
                 </div>
                 <form action="php/signin_verify.php" method="post">
 
@@ -76,7 +91,7 @@
 
 
                     <div class="pb-4">
-                        <label for="name">Nom Complet</label>
+                        <!-- <label for="name">Nom Complet</label> -->
                         <input type="text" placeholder="John Nash" id="name" class="form-control" name="fullname" minlength="4" >
                         <div class="text-danger" id="nomincorrect">
                             <!-- message d'erreur sur le nom -->
@@ -127,7 +142,7 @@
                                 </div> 
                             </div>
                         </div>
-                        <p class="text-pass text-muted pb-4">Le mot de passe doit comporter au moins 4 caractères </p>
+                        <p class="text-pass text-white pb-4">Le mot de passe doit comporter au moins 4 caractères </p>
                         
                         
                         <div class="pb-4">
@@ -155,7 +170,7 @@
                         </div>
 
 
-                    <input type="checkbox" name="case" id="case" class="form-check-input"><p class="text-check"> J'ai accepté les <a href=""> Conditions générales</a></p>
+                    <!-- <input type="checkbox" name="case" id="case" class="form-check-input"><p class="text-check"> J'ai accepté les <a href=""> Conditions générales</a></p> -->
                    <!-- message accepter les conditions générales 
                    <?php
                                 //if(!empty($_POST['case'])){
@@ -174,9 +189,9 @@
                     <button type="submit" name="submit" class="btn btn-danger p-2 col">S'inscrire</button>
                 </form>
             </div>
-            <div class="col-lg-4 mt-4 mt-lg-0">
+            <!-- <div class="col-lg-4 mt-4 mt-lg-0">
                 <img src="img/img-right.png" alt="" class="img-fluid h-100" style="width: 100%;">
-            </div>
+            </div> -->
         </div>
     </div>
 <script src="js/oeil.js"></script>

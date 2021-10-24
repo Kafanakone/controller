@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'config.php';
     
     if(!empty($_POST['fullname']) && !empty($_POST['mail']) && !empty($_POST['motdepasse']) && !empty($_POST['motdepasseconfirme'])){
@@ -37,9 +38,9 @@
 
                             // envoie d'un mail d'inscription reussi
                             mail($mail, "Inscription reussie", "Hello! bienvenue, Vous êtes bien sur notre site");
-                            
-                            // Message d'inscription reussi sur la page
-                            header('Location:../signin.php?error=success');
+                            $_SESSION['user'] = $nom;
+                            // redirection sur index pour se connecter
+                            header('Location:../home.php');
                             die();
                         }else{ header('Location: ../signin.php?error=passworddifferent'); die();} // erreur mdp different
                     }else{ header('Location: ../signin.php?error=emailincorrect'); die();} // erreur mail

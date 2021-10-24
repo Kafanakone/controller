@@ -10,12 +10,43 @@
     <title>Inscription</title>
 </head>
 <body>
+    <style>
+        body{
+            background-image: url("img/bg_index.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h3, h6{
+            font-family: roboto !important;
+            text-align:center;
+            padding-bottom: 0.5em;
+            /* text-transform: uppercase; */
+        }
+        .bg{
+            background-color: rgba(220, 53, 69, 0.9);
+        }
+        .fw{
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-5 mx-auto text-center mt-5">
-            <img src="img/homme3.png" alt="" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+        <div class="row mx-auto text-center mt-3 p-5 rounded-lg bg">
+        <div class="col col-lg-5 mx-auto text-center text-white fw">
+            <img src="img/cours.png" alt="" class="img-fluid mx-auto">
+            <p>Apprenez à apprendre.
+                    Découvrez les compétences de demain.
+                    Et prenez votre carrière en main.
+            </p>
+
+        </div>
+
+        <!-- Form -->
+            <div class=" col-12 mt-4 col-lg-6 bg-light p-4 mx-lg-auto">
+            <!-- <img src="img/homme3.png" alt="" class="img-fluid rounded-circle" style="width: 150px; height: 150px;"> -->
                 <div class="">
-                    <h5>Connectez-Vous</h5>
+                    <h3 class="text-danger ">Votre avenir commence ici</h3>
+                    <h6 class=" lead">Connectez-Vous pour continuer</h6>
                 </div>
                 <form action="php/signup_verify.php" method="post" class="">
                     <!-- message champ vide -->
@@ -103,8 +134,12 @@
                         </div>
                     <button type="submit" class="btn btn-danger my-3 p-2 col">Se connecter</button>
                         </form>
-            </div>
-        </div>
+                        <h6 class=" lead">Vous n'avez pas de compte ? </h6>
+                        <p><a href="signin.php" class="text-danger fw">Inscrivez-vous ici</a></p>
+
+            </div><!-- End form -->
+        </div> 
+        
     </div>
 </body>
 </html>

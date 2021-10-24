@@ -24,6 +24,12 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        h3{
+            font-family: roboto !important;
+            text-align:center;
+            padding-bottom: 0.5em;
+            text-transform: uppercase;
+        }
         td{
             text-align: center;
         }
@@ -47,7 +53,7 @@
     <!--  -->
     <div class="col col-lg-10 container mt-5 bg-light p-5">
     <div class="row">
-        <div class="col col-lg-3 bg-light p-4 rounded-lg">
+    <div class="col-3 bg-light p-4 rounded-lg">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="dashboard.php" role="tab" aria-controls="v-pills-home" aria-selected="true">
                     <i class="pr-3"><img src="../icons/house-fill.svg" alt=""></i>
@@ -68,6 +74,7 @@
         </div>
     <div class="col-12 col-lg-9">
         <!-- table -->
+        <h3>Liste des Utilisateurs</h3>
             <table class="table">
                 <thead class="thead-primary bg-primary text-white text-center">
                     <tr>
@@ -90,13 +97,20 @@
                     <th scope="row"><?php echo ++$i ?></th>
                     <td><?php echo $affiche_user['nom'] ?></td>
                     <td><?php echo $affiche_user['email'] ?></td>
-                    <td><a type="button" class=" col btn btn-primary" data-toggle="modal" data-target="#modify">Modifier le mot de passe</a></td>
-                    <td><a type="button" class="col btn btn-danger" data-toggle="modal" data-target="#delete">Supprimer le compte</a></td>
+                    <td><a  href="confirme_modify_user.php?id=<?php echo $affiche_user['id'] ?>" class=" col btn btn-primary">Modifier le mot de passe</a></td>
+                    <td><a  href="confirme_delete_user.php?id=<?php echo $affiche_user['id'] ?>" class="col btn btn-danger">Supprimer le compte</a></td>
                     </tr>
                 </tbody>
+            <?php
+                    }
+                ?>    
+            </table>
+            
+        <!-- End tableau -->
+    </div>
 
-                <!-- Modal modification -->
-            <div class="modal fade" id="modify" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal modification pour confirmation sur la page actuelle -->
+    <!-- <div class="modal fade" id="modify" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -124,54 +138,10 @@
                     </form>
                 </div>
             </div>
-           <!--End modification  -->
-           <form action="delete_user.php" method="post"> <!-- formulaire envoie des infos de suppression -->
+           End modification  -->
 
-                <!-- Modal Suppression -->
-            <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-danger" id="exampleModalLabel">Attention</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <!-- <form action="delete_user.php" method="post"> -->
-                    <div class="modal-body">
-                        Vous allez supprimer l'utilisateur ?<span class="text-danger">
-                        <?php 
-                                // echo $affiche_user['nom'];
-                                // $_SESSION['delPersonne'] = $affiche_user['id'];
-                        ?>
-                        <input type="text" name="idPersonne" id="" value="<?php  echo $affiche_user['id'] ?> " style="display:;">
-                        </span> 
-                        <p class="text-danger">Entrez votre mot de passe pour confirmer la suppression</p>
-                        <div class="input-group-prepend">
-                                    <input type="password" name="adminpassword" class="form-control" placeholder="Mot de passe administrateur">
-                                    <div class="input-group-text bg-danger"> 
-                                        <img src="../img/oeil.png" alt="" style="width: 20px;" class="cachemotpasse" id="img-oeil" onClick="EtatOeil()">
-                                    </div> 
-                                </div>
-                    </div>
-                    <div class="modal-footer">
-                        <a type="button" 
-                        href="dashboard.php?<?php echo $affiche_user['id']?>" class="btn btn-danger">Supprimer</a>
-                    </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-           <!--End supression  -->
-
-            <?php
-                    }
-                ?>    
-            </table>
-        <!-- End Compteur -->
-        
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+           <!-- Script Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 </body>
