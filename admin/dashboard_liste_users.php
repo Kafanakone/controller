@@ -51,9 +51,9 @@
     <?php } ?>
     <!-- End Message incorrect password -->
     <!--  -->
-    <div class="col-12 col-lg-3 container mt-5 bg-light p-5">
+    <div class="col-lg-10 container mt-lg-5 bg-light p-lg-5">
     <div class="row">
-    <div class="col-3 bg-light p-4 rounded-lg">
+    <div class="col-12 col-lg-3 bg-light p-lg-4 rounded-lg">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link " id="v-pills-home-tab" data-toggle="pill" href="dashboard.php" role="tab" aria-controls="v-pills-home" aria-selected="true">
                     <i class="pr-3"><img src="../icons/house-fill.svg" alt=""></i>

@@ -49,7 +49,7 @@
     <div class="col-12 col-lg-9">
         <!-- Compteur -->
         <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-5 mb-3">
                 <div class="card bg-primary">
                     <div class="card-body text-white">
                         <h5 class="card-title text-center text-white">Nombre d'utilisateurs inscrit </h5>

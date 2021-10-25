@@ -9,7 +9,7 @@
     // Recuperation de l'Id 
     if (isset($_GET['id']) && !empty($_GET['id'])) {
         $iddelete = htmlspecialchars($_GET['id']);
-        $_SESSION['changepwd'] = $iddelete ;
+        $_SESSION['iddelete'] = $iddelete ;
         $del = $bdd->prepare('SELECT * FROM users WHERE id = ?');
         $del->execute(array($_GET['id']));
         $DelPersonne = $del-> fetch();
