@@ -51,7 +51,7 @@
     <?php } ?>
     <!-- End Message incorrect password -->
     <!--  -->
-    <div class="col col-lg-10 container mt-5 bg-light p-5">
+    <div class="col-12 col-lg-3 container mt-5 bg-light p-5">
     <div class="row">
     <div class="col-3 bg-light p-4 rounded-lg">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
